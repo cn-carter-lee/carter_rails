@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-  width:1000px;margin:0 auto;
+  margin: 0;
+  background-color: #ffffff;
 }
 
 .welcome {
@@ -10,4 +11,11 @@ body{
   height:500px;
   background-image: image-url("welcome.jpg");
   background-size: cover;
+
+}
+
+
+footer{
+  background-color: #f9f9f9;
+  height:200px;
 }
