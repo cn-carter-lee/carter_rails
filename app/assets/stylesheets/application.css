@@ -34,9 +34,25 @@ body{
     background-color: #8AD2F3;
     height:50px;
     margin:5px 0px;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 18px;
+}
+
+
+.nav a:link,.nav a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav a:hover,.nav a:active {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .nav ul {
+    margin:0;
+    padding:0;
     list-style-type: circle;
 }
 
@@ -49,6 +65,7 @@ body{
 }
 
 footer{
+    padding-top:20px;
     background-color: #f9f9f9;
     height:200px;
     text-align: center;
