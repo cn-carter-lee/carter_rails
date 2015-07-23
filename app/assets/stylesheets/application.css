@@ -27,11 +27,29 @@ body{
 
 .header{
     height:100px;
-    background-color: #CCCCCC;
+    background-color: #ffffff;
 }
 
-.nav{
-    background-color: #0000ff;
+.nav {
+    background-color: #8AD2F3;
     height:50px;
     margin:5px 0px;
+}
+
+.nav ul {
+    list-style-type: circle;
+}
+
+.nav li {
+    list-style-type: none;
+    float: left;
+    padding: 0;
+    margin: 0 20px 0 0;
+    line-height: 50px;
+}
+
+footer{
+    background-color: #f9f9f9;
+    height:200px;
+    text-align: center;
 }
