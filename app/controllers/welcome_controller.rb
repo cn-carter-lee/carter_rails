@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
   def show
 
   end
+
+  def qau
+
+  end
 end

@@ -4,6 +4,7 @@
   <title>Sunny & Carter</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield(:head) %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,9 +20,8 @@
         <a href="/welcome/">Index</a>
       </li>
       <li>
-        <a href="/welcome/video">Video</a>
+        <a href="/video">Video</a>
       </li>
-
     </ul>
   </div>
 
@@ -29,7 +29,7 @@
 
 <%= yield %>
 <footer>
-  2013-2015
+  2013-2015 Guangzhou
 </footer>
 </body>
 </html>
