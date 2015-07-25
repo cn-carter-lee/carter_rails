@@ -1,5 +1,67 @@
+<% content_for(:head) do %>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+        $("#dialog").dialog({
+            width: 500,
+            height: 500,
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+
+        var openVideo = function (id) {
+            $.ajax({
+                url: "/video/" + id,
+                dataType: 'json'
+            }).done(function (data) {
+                console.log(data);
+//                $("#dialog").dialog("option", "title", "Fly Over Qingdao.");
+//                $("#dialog").dialog("open");
+            });
+
+        }
+
+
+        $.ajax({
+            url: "/video",
+            dataType: 'json'
+        }).done(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                video = data[i];
+                $(".video-list").append('<li><a href="#"  videoid="' + video.id + '">' + video.name + '</a></li>');
+            }
+
+            $(".video-list > li > a").click(function () {
+                var video_id = $(this).attr('videoid');
+                openVideo(video_id);
+            });
+        });
+
+    });
+</script>
+<% end %>
+
 <div class="container">
-    <h1>Flying Over Qingdao in 2002</h1>
-    <embed src="http://player.56.com/v_MTY3NTU3NzU.swf" type="application/x-shockwave-flash" width="100%" height="500"
-           allowfullscreen="true" allownetworking="all" allowscriptaccess="always"></embed>
+    <h1>Here is a video list</h1>
+    <ul class="video-list">
+
+    </ul>
+
+    <div id="dialog" title="Basic dialog" style="width: 100%;height:100%;">
+        <embed src="http://player.56.com/v_MTY3NTU3NzU.swf" type="application/x-shockwave-flash"
+               style="width:100%;height:100%;"
+               allowfullscreen="true" allownetworking="all" allowscriptaccess="always"></embed>
+    </div>
+
+
 </div>
