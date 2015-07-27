@@ -24,13 +24,11 @@
                 url: "/video/" + id,
                 dataType: 'json'
             }).done(function (data) {
-                console.log(data);
-//                $("#dialog").dialog("option", "title", "Fly Over Qingdao.");
-//                $("#dialog").dialog("open");
+                $("#dialog").html(data.content);
+                $("#dialog").dialog("option", "title", data.title);
+                $("#dialog").dialog("open");
             });
-
         }
-
 
         $.ajax({
             url: "/video",
@@ -50,18 +48,14 @@
     });
 </script>
 <% end %>
-
+<%= @name %>
 <div class="container">
-    <h1>Here is a video list</h1>
     <ul class="video-list">
 
     </ul>
 
     <div id="dialog" title="Basic dialog" style="width: 100%;height:100%;">
-        <embed src="http://player.56.com/v_MTY3NTU3NzU.swf" type="application/x-shockwave-flash"
-               style="width:100%;height:100%;"
-               allowfullscreen="true" allownetworking="all" allowscriptaccess="always"></embed>
-    </div>
 
+    </div>
 
 </div>
